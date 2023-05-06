@@ -11,11 +11,11 @@ function formSubmit(event) {
         elements: {email, password}
     } = event.currentTarget;
 
-    if(email.value === "" || password.value === "" ) {
+    if(email.value === "" || password.value.trim() === "" ) {
         return alert("all fields must be filled in");
     }
 
-    const data = {email: email.value, password: password.value};
+    const data = {email: email.value, password: password.value.trim()};
     console.log(data);
     event.currentTarget.reset();
 
